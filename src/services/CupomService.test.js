@@ -149,7 +149,7 @@ describe("CupomService", () => {
     };
 
     const service = new CupomService(repository);
-    const cliente = criarCliente({ pontos: 50 });
+    const cliente = criarCliente({ pontos: 99 });
 
     // Act + Assert
     await expect(
@@ -186,6 +186,12 @@ describe("CupomService", () => {
     // Assert
     expect(resultado.desconto).toBe(50);
     expect(resultado.totalFinal).toBe(450);
+
+    expect(repository.buscarPorCodigo)
+  .toHaveBeenCalledWith("DESCONTO10");
+
+expect(repository.registrarUso)
+  .toHaveBeenCalledWith(cupom.id);
   });
 
   test("deve respeitar o limite máximo de desconto percentual", async () => {
