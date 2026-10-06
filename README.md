@@ -19,25 +19,54 @@ Durante o desenvolvimento, foram aplicados conceitos de:
 - Cobertura de código;
 - Organização e colaboração utilizando Git e GitHub.
 
-🧩 Organização do Projeto
+## 🧩 Organização do Projeto
 O projeto foi dividido entre os 7 integrantes do grupo, de forma que cada integrante realizasse uma contribuição específica e registrasse sua participação através de um commit separado.
-Integrante       Responsabilidade                                        Commit
-  1  ///  Configuração do projeto, Node.js, ESM e Jest   /// chore: configura ambiente do projeto
-  
-  2   ///   Implementação do CupomService            ///     feat: implementa service de cupons
+### Integrante 1 — Configuração do projeto
 
-  3     ///   Criação das Factories                 ///      test: adiciona factories de teste
+**Responsabilidade:** Configuração do projeto, Node.js, ESM e Jest.
 
-  4     ///     Testes de descontos                ///       test: adiciona testes de descontos
+**Commit:** `chore: configura ambiente do projeto`
 
-  5    ///  Testes de validações e exceções        ///        test: adiciona testes de validacao
+### Integrante 2 — Implementação do CupomService
 
-  6    ///  Testes de fidelidade e Mocks            ///     test: adiciona testes de fidelidade e mocks
+**Responsabilidade:** Implementação das regras de negócio dos cupons.
 
-  7   ///  Documentação, cobertura e revisão final   ///     docs: adiciona documentacao e resultados
+**Commit:** `feat: implementa service de cupons`
+
+### Integrante 3 — Criação das Factories
+
+**Responsabilidade:** Criação das Factories para os dados de teste.
+
+**Commit:** `test: adiciona factories de teste`
+
+### Integrante 4 — Testes de descontos
+
+**Responsabilidade:** Testes relacionados aos descontos dos cupons.
+
+**Commit:** `test: adiciona testes de descontos`
+
+### Integrante 5 — Testes de validações e exceções
+
+**Responsabilidade:** Testes de validações e tratamento de exceções.
+
+**Commit:** `test: adiciona testes de validacao`
+
+### Integrante 6 — Testes de fidelidade e Mocks
+
+**Responsabilidade:** Testes de fidelidade, limites e utilização de Mocks.
+
+**Commit:** `test: adiciona testes de fidelidade e mocks`
+
+### Integrante 7 — Documentação
+
+**Responsabilidade:** Organização do README, documentação e revisão final.
+
+**Commit:** `docs: adiciona documentacao e resultados`
 
 
-📁 Estrutura do Projeto
+## 📁 Estrutura do Projeto
+
+```text
 grupo6-ecommerce-cupons/
 │
 ├── src/
@@ -59,6 +88,7 @@ grupo6-ecommerce-cupons/
 A pasta coverage/ é gerada automaticamente pelo Jest quando os testes são executados com cobertura e não deve ser enviada para o repositório.
 
 ---------------------------------------------------------------------------------------------------------
+
 🧪 Regras de Negócio Testadas
 O sistema possui diferentes regras relacionadas à utilização de cupons.
 💰 Desconto Percentual
