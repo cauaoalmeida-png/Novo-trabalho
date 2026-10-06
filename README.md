@@ -84,12 +84,13 @@ grupo6-ecommerce-cupons/
 ├── package.json
 ├── package-lock.json
 └── README.md
+```
 
 A pasta coverage/ é gerada automaticamente pelo Jest quando os testes são executados com cobertura e não deve ser enviada para o repositório.
 
 ---------------------------------------------------------------------------------------------------------
 
-🧪 Regras de Negócio Testadas
+## 🧪 Regras de Negócio Testadas
 O sistema possui diferentes regras relacionadas à utilização de cupons.
 💰 Desconto Percentual
 Permite aplicar um desconto baseado em uma porcentagem sobre o valor do carrinho.
@@ -102,7 +103,7 @@ Total: R$ 450,00
 
 ---------------------------------------------------------------------------------------------------------
 
-💵 Desconto Fixo
+## 💵 Desconto Fixo
 Permite aplicar um valor fixo de desconto sobre o carrinho.
 Exemplo:
 Carrinho: R$ 500,00
@@ -113,13 +114,13 @@ Total: R$ 450,00
 
 ---------------------------------------------------------------------------------------------------------
 
-🛑 Limite de Desconto
+## 🛑 Limite de Desconto
 O sistema deve impedir que o desconto ultrapasse o limite máximo definido pelo cupom.
 Essa regra evita que um desconto percentual gere um valor superior ao permitido.
 
 ---------------------------------------------------------------------------------------------------------
 
-📦 Valor Mínimo do Carrinho
+## 📦 Valor Mínimo do Carrinho
 Alguns cupons possuem um valor mínimo necessário para serem utilizados.
 Exemplo:
 Valor mínimo: R$ 100,00
@@ -129,28 +130,28 @@ Resultado: cupom não pode ser utilizado.
 
 ---------------------------------------------------------------------------------------------------------
 
-⏰ Cupom Expirado
+## ⏰ Cupom Expirado
 Cupons possuem uma data de expiração.
 Caso a data atual seja posterior à data de validade, o sistema deve impedir sua utilização.
 ❌ Cupom expirado
 
 ---------------------------------------------------------------------------------------------------------
 
-🚫 Cupom Inativo
+## 🚫 Cupom Inativo
 Um cupom pode estar desativado.
 Nesse caso, mesmo que esteja dentro da validade, ele não poderá ser utilizado.
 ❌ Cupom inativo
 
 ---------------------------------------------------------------------------------------------------------
 
-🔢 Limite de Utilizações
+## 🔢 Limite de Utilizações
 Os cupons podem possuir um limite máximo de utilização.
 Quando esse limite é atingido, novas utilizações devem ser bloqueadas.
 ❌ Limite de usos atingido
 
 ---------------------------------------------------------------------------------------------------------
 
-👤 Fidelidade do Cliente
+## 👤 Fidelidade do Cliente
 Alguns cupons podem ser exclusivos para clientes fidelidade.
 O cliente precisa possuir a quantidade mínima de pontos definida pela regra.
 Exemplo:
@@ -162,7 +163,7 @@ Cliente com 100 pontos
 
 ---------------------------------------------------------------------------------------------------------
 
-🏭 Factory
+## 🏭 Factory
 Para facilitar a criação dos dados utilizados nos testes, foi utilizado o padrão Factory.
 A Factory permite criar objetos de teste com valores padrão, possibilitando alterar somente as informações necessárias para cada cenário.
 Exemplo:
@@ -192,7 +193,7 @@ Isso deixa os testes mais organizados, reutilizáveis e fáceis de manter.
 
 ---------------------------------------------------------------------------------------------------------
 
-🎭 Mocks
+## 🎭 Mocks
 O projeto também utiliza Mocks para simular dependências externas do serviço.
 Foi utilizado o jest.fn() para criar funções simuladas.
 Exemplo:
@@ -212,7 +213,7 @@ expect(repository.registrarUso)
 
 ---------------------------------------------------------------------------------------------------------
 
-🧱 Padrão AAA
+## 🧱 Padrão AAA
 Os testes seguem o padrão AAA — Arrange, Act, Assert.
 Arrange
 Prepara os dados necessários para o teste.
@@ -241,7 +242,7 @@ A utilização desse padrão ajuda a deixar os testes mais claros e organizados.
 
 ---------------------------------------------------------------------------------------------------------
 
-⚠️ Testes de Exceções
+## ⚠️ Testes de Exceções
 O projeto também testa situações em que o sistema deve rejeitar uma operação.
 Como o serviço possui funções assíncronas, foi utilizado o rejects.toThrow() do Jest.
 Exemplo:
@@ -259,7 +260,7 @@ Cliente sem pontuação suficiente para cupom de fidelidade.
 
 ---------------------------------------------------------------------------------------------------------
 
-🏗️ Pirâmide de Testes
+## 🏗️ Pirâmide de Testes
 A Pirâmide de Testes representa uma estratégia para organizar diferentes níveis de testes.
 Neste projeto, o foco principal está nos testes unitários, pois eles permitem verificar pequenas partes da aplicação de maneira rápida e isolada.
           /\
@@ -275,7 +276,7 @@ Os testes unitários formam a base porque normalmente são mais rápidos, possue
 
 ---------------------------------------------------------------------------------------------------------
 
-🧪 F.I.R.S.T.
+## 🧪 F.I.R.S.T.
 Os testes foram desenvolvidos considerando os princípios do F.I.R.S.T.:
 Fast — devem ser rápidos para executar.
 Independent — cada teste deve funcionar de forma independente.
@@ -286,7 +287,7 @@ Esses princípios ajudam a criar uma suíte de testes confiável e fácil de man
 
 ---------------------------------------------------------------------------------------------------------
 
-📊 Cobertura de Testes
+## 📊 Cobertura de Testes
 Para verificar a cobertura do código, foi utilizado o recurso de cobertura do Jest.
 Execute:
 npm run test:coverage
@@ -316,7 +317,7 @@ npm run test:coverage
 
 ---------------------------------------------------------------------------------------------------------
 
-🚀 Como Executar o Projeto
+## 🚀 Como Executar o Projeto
 1. Clonar o repositório
 git clone URL_DO_REPOSITORIO
 
@@ -337,7 +338,7 @@ npm run test:coverage
 
 ---------------------------------------------------------------------------------------------------------
 
-🛠️ Tecnologias Utilizadas
+## 🛠️ Tecnologias Utilizadas
 Node.js — ambiente de execução JavaScript;
 Jest — framework utilizado para os testes automatizados;
 JavaScript — linguagem utilizada no projeto;
@@ -347,7 +348,7 @@ GitHub — hospedagem e colaboração do projeto.
 
 ---------------------------------------------------------------------------------------------------------
 
-🌿 Organização com Git
+## 🌿 Organização com Git
 O desenvolvimento foi organizado de maneira colaborativa, utilizando commits separados para registrar a contribuição dos integrantes.
 O histórico esperado do projeto é:
 
@@ -364,7 +365,7 @@ Para manter a organização, recomenda-se que cada integrante trabalhe em sua pr
 
 ---------------------------------------------------------------------------------------------------------
 
-👥 Participantes
+## 👥 Participantes
 
 Integrante     |   Responsabilidade
 
@@ -384,7 +385,7 @@ Integrante 7   |    Documentação e revisão
 
 ---------------------------------------------------------------------------------------------------------
 
-✅ Conclusão
+## ✅ Conclusão
 O projeto permitiu aplicar, na prática, conceitos de testes automatizados em aplicações Node.js. Foram utilizados testes unitários com Jest, padrão AAA, Factory, Mocks, testes de funções assíncronas, tratamento de exceções e análise de cobertura.
 Além da parte técnica, a utilização do Git e GitHub possibilitou organizar o trabalho colaborativo, permitindo que cada integrante contribuísse com uma parte específica do projeto e tivesse sua participação registrada no histórico de commits.
 Dessa forma, o projeto demonstra não apenas o funcionamento das regras de cupons de desconto, mas também a aplicação de boas práticas de desenvolvimento e testes de software.
