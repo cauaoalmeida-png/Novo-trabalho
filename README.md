@@ -19,25 +19,54 @@ Durante o desenvolvimento, foram aplicados conceitos de:
 - Cobertura de código;
 - Organização e colaboração utilizando Git e GitHub.
 
-🧩 Organização do Projeto
+## 🧩 Organização do Projeto
 O projeto foi dividido entre os 7 integrantes do grupo, de forma que cada integrante realizasse uma contribuição específica e registrasse sua participação através de um commit separado.
-Integrante       Responsabilidade                                        Commit
-  1  ///  Configuração do projeto, Node.js, ESM e Jest   /// chore: configura ambiente do projeto
-  
-  2   ///   Implementação do CupomService            ///     feat: implementa service de cupons
+### Integrante 1 — Configuração do projeto
 
-  3     ///   Criação das Factories                 ///      test: adiciona factories de teste
+**Responsabilidade:** Configuração do projeto, Node.js, ESM e Jest.
 
-  4     ///     Testes de descontos                ///       test: adiciona testes de descontos
+**Commit:** `chore: configura ambiente do projeto`
 
-  5    ///  Testes de validações e exceções        ///        test: adiciona testes de validacao
+### Integrante 2 — Implementação do CupomService
 
-  6    ///  Testes de fidelidade e Mocks            ///     test: adiciona testes de fidelidade e mocks
+**Responsabilidade:** Implementação das regras de negócio dos cupons.
 
-  7   ///  Documentação, cobertura e revisão final   ///     docs: adiciona documentacao e resultados
+**Commit:** `feat: implementa service de cupons`
+
+### Integrante 3 — Criação das Factories
+
+**Responsabilidade:** Criação das Factories para os dados de teste.
+
+**Commit:** `test: adiciona factories de teste`
+
+### Integrante 4 — Testes de descontos
+
+**Responsabilidade:** Testes relacionados aos descontos dos cupons.
+
+**Commit:** `test: adiciona testes de descontos`
+
+### Integrante 5 — Testes de validações e exceções
+
+**Responsabilidade:** Testes de validações e tratamento de exceções.
+
+**Commit:** `test: adiciona testes de validacao`
+
+### Integrante 6 — Testes de fidelidade e Mocks
+
+**Responsabilidade:** Testes de fidelidade, limites e utilização de Mocks.
+
+**Commit:** `test: adiciona testes de fidelidade e mocks`
+
+### Integrante 7 — Documentação
+
+**Responsabilidade:** Organização do README, documentação e revisão final.
+
+**Commit:** `docs: adiciona documentacao e resultados`
 
 
-📁 Estrutura do Projeto
+## 📁 Estrutura do Projeto
+
+```text
 grupo6-ecommerce-cupons/
 │
 ├── src/
@@ -55,11 +84,13 @@ grupo6-ecommerce-cupons/
 ├── package.json
 ├── package-lock.json
 └── README.md
+```
 
 A pasta coverage/ é gerada automaticamente pelo Jest quando os testes são executados com cobertura e não deve ser enviada para o repositório.
 
 ---------------------------------------------------------------------------------------------------------
-🧪 Regras de Negócio Testadas
+
+## 🧪 Regras de Negócio Testadas
 O sistema possui diferentes regras relacionadas à utilização de cupons.
 💰 Desconto Percentual
 Permite aplicar um desconto baseado em uma porcentagem sobre o valor do carrinho.
@@ -72,7 +103,7 @@ Total: R$ 450,00
 
 ---------------------------------------------------------------------------------------------------------
 
-💵 Desconto Fixo
+## 💵 Desconto Fixo
 Permite aplicar um valor fixo de desconto sobre o carrinho.
 Exemplo:
 Carrinho: R$ 500,00
@@ -83,13 +114,13 @@ Total: R$ 450,00
 
 ---------------------------------------------------------------------------------------------------------
 
-🛑 Limite de Desconto
+## 🛑 Limite de Desconto
 O sistema deve impedir que o desconto ultrapasse o limite máximo definido pelo cupom.
 Essa regra evita que um desconto percentual gere um valor superior ao permitido.
 
 ---------------------------------------------------------------------------------------------------------
 
-📦 Valor Mínimo do Carrinho
+## 📦 Valor Mínimo do Carrinho
 Alguns cupons possuem um valor mínimo necessário para serem utilizados.
 Exemplo:
 Valor mínimo: R$ 100,00
@@ -99,28 +130,28 @@ Resultado: cupom não pode ser utilizado.
 
 ---------------------------------------------------------------------------------------------------------
 
-⏰ Cupom Expirado
+## ⏰ Cupom Expirado
 Cupons possuem uma data de expiração.
 Caso a data atual seja posterior à data de validade, o sistema deve impedir sua utilização.
 ❌ Cupom expirado
 
 ---------------------------------------------------------------------------------------------------------
 
-🚫 Cupom Inativo
+## 🚫 Cupom Inativo
 Um cupom pode estar desativado.
 Nesse caso, mesmo que esteja dentro da validade, ele não poderá ser utilizado.
 ❌ Cupom inativo
 
 ---------------------------------------------------------------------------------------------------------
 
-🔢 Limite de Utilizações
+## 🔢 Limite de Utilizações
 Os cupons podem possuir um limite máximo de utilização.
 Quando esse limite é atingido, novas utilizações devem ser bloqueadas.
 ❌ Limite de usos atingido
 
 ---------------------------------------------------------------------------------------------------------
 
-👤 Fidelidade do Cliente
+## 👤 Fidelidade do Cliente
 Alguns cupons podem ser exclusivos para clientes fidelidade.
 O cliente precisa possuir a quantidade mínima de pontos definida pela regra.
 Exemplo:
@@ -132,7 +163,7 @@ Cliente com 100 pontos
 
 ---------------------------------------------------------------------------------------------------------
 
-🏭 Factory
+## 🏭 Factory
 Para facilitar a criação dos dados utilizados nos testes, foi utilizado o padrão Factory.
 A Factory permite criar objetos de teste com valores padrão, possibilitando alterar somente as informações necessárias para cada cenário.
 Exemplo:
@@ -162,7 +193,7 @@ Isso deixa os testes mais organizados, reutilizáveis e fáceis de manter.
 
 ---------------------------------------------------------------------------------------------------------
 
-🎭 Mocks
+## 🎭 Mocks
 O projeto também utiliza Mocks para simular dependências externas do serviço.
 Foi utilizado o jest.fn() para criar funções simuladas.
 Exemplo:
@@ -182,7 +213,7 @@ expect(repository.registrarUso)
 
 ---------------------------------------------------------------------------------------------------------
 
-🧱 Padrão AAA
+## 🧱 Padrão AAA
 Os testes seguem o padrão AAA — Arrange, Act, Assert.
 Arrange
 Prepara os dados necessários para o teste.
@@ -211,7 +242,7 @@ A utilização desse padrão ajuda a deixar os testes mais claros e organizados.
 
 ---------------------------------------------------------------------------------------------------------
 
-⚠️ Testes de Exceções
+## ⚠️ Testes de Exceções
 O projeto também testa situações em que o sistema deve rejeitar uma operação.
 Como o serviço possui funções assíncronas, foi utilizado o rejects.toThrow() do Jest.
 Exemplo:
@@ -229,7 +260,7 @@ Cliente sem pontuação suficiente para cupom de fidelidade.
 
 ---------------------------------------------------------------------------------------------------------
 
-🏗️ Pirâmide de Testes
+## 🏗️ Pirâmide de Testes
 A Pirâmide de Testes representa uma estratégia para organizar diferentes níveis de testes.
 Neste projeto, o foco principal está nos testes unitários, pois eles permitem verificar pequenas partes da aplicação de maneira rápida e isolada.
           /\
@@ -245,7 +276,7 @@ Os testes unitários formam a base porque normalmente são mais rápidos, possue
 
 ---------------------------------------------------------------------------------------------------------
 
-🧪 F.I.R.S.T.
+## 🧪 F.I.R.S.T.
 Os testes foram desenvolvidos considerando os princípios do F.I.R.S.T.:
 Fast — devem ser rápidos para executar.
 Independent — cada teste deve funcionar de forma independente.
@@ -256,7 +287,7 @@ Esses princípios ajudam a criar uma suíte de testes confiável e fácil de man
 
 ---------------------------------------------------------------------------------------------------------
 
-📊 Cobertura de Testes
+## 📊 Cobertura de Testes
 Para verificar a cobertura do código, foi utilizado o recurso de cobertura do Jest.
 Execute:
 npm run test:coverage
@@ -286,7 +317,7 @@ npm run test:coverage
 
 ---------------------------------------------------------------------------------------------------------
 
-🚀 Como Executar o Projeto
+## 🚀 Como Executar o Projeto
 1. Clonar o repositório
 git clone URL_DO_REPOSITORIO
 
@@ -307,7 +338,7 @@ npm run test:coverage
 
 ---------------------------------------------------------------------------------------------------------
 
-🛠️ Tecnologias Utilizadas
+## 🛠️ Tecnologias Utilizadas
 Node.js — ambiente de execução JavaScript;
 Jest — framework utilizado para os testes automatizados;
 JavaScript — linguagem utilizada no projeto;
@@ -317,7 +348,7 @@ GitHub — hospedagem e colaboração do projeto.
 
 ---------------------------------------------------------------------------------------------------------
 
-🌿 Organização com Git
+## 🌿 Organização com Git
 O desenvolvimento foi organizado de maneira colaborativa, utilizando commits separados para registrar a contribuição dos integrantes.
 O histórico esperado do projeto é:
 
@@ -334,7 +365,7 @@ Para manter a organização, recomenda-se que cada integrante trabalhe em sua pr
 
 ---------------------------------------------------------------------------------------------------------
 
-👥 Participantes
+## 👥 Participantes
 
 Integrante     |   Responsabilidade
 
@@ -354,7 +385,7 @@ Integrante 7   |    Documentação e revisão
 
 ---------------------------------------------------------------------------------------------------------
 
-✅ Conclusão
+## ✅ Conclusão
 O projeto permitiu aplicar, na prática, conceitos de testes automatizados em aplicações Node.js. Foram utilizados testes unitários com Jest, padrão AAA, Factory, Mocks, testes de funções assíncronas, tratamento de exceções e análise de cobertura.
 Além da parte técnica, a utilização do Git e GitHub possibilitou organizar o trabalho colaborativo, permitindo que cada integrante contribuísse com uma parte específica do projeto e tivesse sua participação registrada no histórico de commits.
 Dessa forma, o projeto demonstra não apenas o funcionamento das regras de cupons de desconto, mas também a aplicação de boas práticas de desenvolvimento e testes de software.
