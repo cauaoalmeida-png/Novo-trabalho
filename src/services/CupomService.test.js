@@ -149,7 +149,9 @@ describe("CupomService", () => {
     };
 
     const service = new CupomService(repository);
-    const cliente = criarCliente({ pontos: 99 });
+    const cliente = criarCliente({
+      pontos: 50
+    });
 
     // Act + Assert
     await expect(
@@ -174,7 +176,9 @@ describe("CupomService", () => {
     };
 
     const service = new CupomService(repository);
-    const cliente = criarCliente({ pontos: 100 });
+    const cliente = criarCliente({
+      pontos: 100
+    });
 
     // Act
     const resultado = await service.validarECobrar(
@@ -186,58 +190,8 @@ describe("CupomService", () => {
     // Assert
     expect(resultado.desconto).toBe(50);
     expect(resultado.totalFinal).toBe(450);
-
-    expect(repository.buscarPorCodigo)
-  .toHaveBeenCalledWith("DESCONTO10");
-
-expect(repository.registrarUso)
-  .toHaveBeenCalledWith(cupom.id);
-  });
-
-  test("deve respeitar o limite máximo de desconto percentual", async () => {
-    // Arrange
-    const cupom = criarCupom({
-      tipo: "percentual",
-      valor: 50,
-      limiteDesconto: 100
-    });
-
-    const repository = {
-      buscarPorCodigo: jest.fn().mockResolvedValue(cupom),
-      registrarUso: jest.fn().mockResolvedValue(undefined)
-    };
-
-    const service = new CupomService(repository);
-
-    // Act
-    const resultado = await service.validarECobrar(
-      "DESCONTO10",
-      criarCarrinho({ total: 1000 }),
-      criarCliente()
-    );
-
-    // Assert
-    expect(resultado.desconto).toBe(100);
-    expect(resultado.totalFinal).toBe(900);
-  });
-
-  test("deve rejeitar cupom inexistente", async () => {
-    // Arrange
-    const repository = {
-      buscarPorCodigo: jest.fn().mockResolvedValue(null),
-      registrarUso: jest.fn().mockResolvedValue(undefined)
-    };
-
-    const service = new CupomService(repository);
-
-    // Act + Assert
-    await expect(
-      service.validarECobrar(
-        "INEXISTENTE",
-        criarCarrinho(),
-        criarCliente()
-      )
-    ).rejects.toThrow("Cupom não encontrado");
+    expect(repository.buscarPorCodigo).toHaveBeenCalledWith("DESCONTO10");
+    expect(repository.registrarUso).toHaveBeenCalledWith(cupom.id);
   });
 
   test("deve rejeitar cupom inativo", async () => {
@@ -284,5 +238,51 @@ expect(repository.registrarUso)
         criarCliente()
       )
     ).rejects.toThrow("Tipo de desconto inválido");
+  });
+
+  test("deve respeitar o limite máximo de desconto percentual", async () => {
+    // Arrange
+    const cupom = criarCupom({
+      tipo: "percentual",
+      valor: 50,
+      limiteDesconto: 100
+    });
+
+    const repository = {
+      buscarPorCodigo: jest.fn().mockResolvedValue(cupom),
+      registrarUso: jest.fn().mockResolvedValue(undefined)
+    };
+
+    const service = new CupomService(repository);
+
+    // Act
+    const resultado = await service.validarECobrar(
+      "DESCONTO10",
+      criarCarrinho({ total: 1000 }),
+      criarCliente()
+    );
+
+    // Assert
+    expect(resultado.desconto).toBe(100);
+    expect(resultado.totalFinal).toBe(900);
+  });
+
+  test("deve rejeitar cupom inexistente", async () => {
+    // Arrange
+    const repository = {
+      buscarPorCodigo: jest.fn().mockResolvedValue(null),
+      registrarUso: jest.fn().mockResolvedValue(undefined)
+    };
+
+    const service = new CupomService(repository);
+
+    // Act + Assert
+    await expect(
+      service.validarECobrar(
+        "INEXISTENTE",
+        criarCarrinho(),
+        criarCliente()
+      )
+    ).rejects.toThrow("Cupom não encontrado");
   });
 });
